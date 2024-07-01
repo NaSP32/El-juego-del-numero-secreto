@@ -6,20 +6,20 @@ en el  "entorno de producción", los comandos console.log deben eliminarse o des
 ya que pueden causar problemas de rendimiento y seguridad.*/
 //variables: let, const, var 
 // utilizaremos let*/
-
-let numeroSecreto = Math.floor(Math.random()* 10)+1; //variable para comparar 
+let numeroMaximoPosible = 100;
+let numeroSecreto = Math.floor(Math.random() * numeroMaximoPosible)+1; //variable para comparar 
 console.log(numeroSecreto);
 let numeroUsuario = 0;
 let intentos = 1;
 //let cantidadVeces = 'vez';
-let maximosIntentos = 3;
+let maximosIntentos = 7;
 
 
 while (numeroUsuario != numeroSecreto) {
 
     //parseInt convierte a numero entero lo que recibe, entonces se ejecuta 1 el prompt y luego se convierte
-    numeroUsuario = parseInt(prompt("Me indicas un número entre 1 y 10 por favor:")); // método prompt de Js 
-    console.log(typeof(numeroUsuario));
+    numeroUsuario = parseInt(prompt(`Me indicas un número entre 1 y ${numeroMaximoPosible} por favor:`)); // método prompt de Js 
+    
 
     //Comparacion: un signo igual es una asignacion. Dos == es una comparacion
     if (numeroUsuario == numeroSecreto) { 
