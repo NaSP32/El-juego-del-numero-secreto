@@ -5,12 +5,13 @@ alert('Vas a iniciar a jugar un juego de adivinanzas'); //lo que va entre () es 
 en el  "entorno de producción", los comandos console.log deben eliminarse o desactivarse, 
 ya que pueden causar problemas de rendimiento y seguridad.*/
 //variables: let, const, var 
-// utilizaremos let
-/*
+// utilizaremos let*/
+
 let numeroSecreto = 3; //variable para comparar 
 let numeroUsuario = 0;
-let contador = 1;
-let cantidadVeces = 'vez';
+let intentos = 1;
+//let cantidadVeces = 'vez';
+let maximosIntentos = 3;
 
 
 while (numeroUsuario != numeroSecreto) {
@@ -21,25 +22,32 @@ while (numeroUsuario != numeroSecreto) {
     //Comparacion: un signo igual es una asignacion. Dos == es una comparacion
     if (numeroUsuario == numeroSecreto) { 
         //Acertamos, la condicion es verdadera
-        alert('Acertaste, el número es: ' + numeroUsuario); 
-        //Segunda opcion necesito el $ para avisarle que lo que continua es una variable
-        alert(`Acertaste, el numero que pense es: ${numeroUsuario}. Acertase en ${contador} ${cantidadVeces} `);
+        //alert('Acertaste, el número es: ' + numeroUsuario); 
+        //Segunda opcion necesito el $ para avisarle que lo que continua es una variable.  El ? reemplaza un if y el : un else
+        alert(`Acertaste, el numero que pense es: ${numeroUsuario}. Acertase en ${intentos} ${intentos == 1 ? 'vez' : 'veces'}`);
     
     } else {
         if (numeroUsuario > numeroSecreto){
             alert('El número que yo pense es menor al que escribiste');
-            alert('¿Deseas volver a intentarlo?');
+            //alert('¿Deseas volver a intentarlo?');
         
         }else{
             alert('El número que yo pense es mayor al que escribiste')
             }
         }
-        //incrementamos el contador luego del 1° intento
-        contador = contador + 1;
-        cantidadVeces = 'veces';
+        //incrementamos el contador luego del 1° intento, si no acierta
+        //intentos = intentos + 1;
+        //intentos += 1;
+        intentos ++;
+        //cantidadVeces = 'veces';
+        //nuevo condicional para limitar la cantidad de intentos
+        if (intentos > maximosIntentos) {
+            alert(`Llegaste al número máximo de ${maximosIntentos} intentos`);
+            break;
+        }
+    }
 
-}*/
-
+/*
 let qtdNumeros = prompt('Digite la cantidad de números para el cálculo del promedio:');
 let soma = 0;
 let contador = qtdNumeros;
@@ -53,3 +61,4 @@ while(contador > 0){
 let promedio = soma / qtdNumeros;
 
 console.log(promedio);
+*/
